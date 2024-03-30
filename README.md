@@ -1,5 +1,7 @@
 # Deploy
 
+[![Docker](https://github.com/gvkhna/postgis-vector/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/gvkhna/postgis-vector/actions/workflows/publish.yml)
+
 ```
 ghcr.io/gvkhna/postgis-vector:latest
 ```
