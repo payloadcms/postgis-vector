@@ -1,11 +1,11 @@
+# postgis-vector
+
 postgresql,postgis docker container with pgvector added
 
-# Deploy
-
-[![Docker](https://github.com/gvkhna/postgis-vector/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/gvkhna/postgis-vector/actions/workflows/publish.yml)
+[![Build Status](https://github.com/gvkhna/postgis-vector/actions/workflows/publish.yml/badge.svg)](https://github.com/gvkhna/postgis-vector/actions)
 
 ```
-ghcr.io/gvkhna/postgis-vector:latest
+podman pull ghcr.io/gvkhna/postgis-vector:latest
 ```
 
 ## Build
