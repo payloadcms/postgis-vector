@@ -24,3 +24,5 @@ RUN apt-get update \
   && apt-get clean \
   && apt-mark unhold locales \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+COPY ./initdb-extensions.sh /docker-entrypoint-initdb.d/20_extensions.sh
