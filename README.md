@@ -2,10 +2,10 @@
 
 postgresql,postgis docker container with pgvector added
 
-[![Build Status](https://github.com/gvkhna/postgis-vector/actions/workflows/build.yml/badge.svg)](https://github.com/gvkhna/postgis-vector/actions)
+[![Build Status](https://github.com/payloadcms/postgis-vector/actions/workflows/build.yml/badge.svg)](https://github.com/payloadcms/postgis-vector/actions)
 
-```
-podman pull ghcr.io/gvkhna/postgis-vector:latest
+```bash
+podman pull ghcr.io/payloadcms/postgis-vector:latest
 ```
 
 ## Build
