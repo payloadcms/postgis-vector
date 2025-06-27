@@ -4,7 +4,7 @@ ARG PG_MAJOR
 
 LABEL org.opencontainers.image.title="postgis-vector" \
       org.opencontainers.image.description="postgresql+postgis container with pgvector added" \
-      org.opencontainers.image.vendor="@gvkhna" \
+      org.opencontainers.image.vendor="Payload" \
       org.opencontainers.image.authors="Payload <dev@payloadcms.com>" \
       org.opencontainers.image.version="17-3.5" \
       org.opencontainers.image.licenses="MIT" \
