@@ -17,7 +17,6 @@ RUN apt-get update \
   build-essential \
   pgxnclient \
   postgresql-server-dev-$PG_MAJOR \
-  && pgxn install 'pg_uuidv7=1.6.0' \
   && pgxn install 'vector=0.8.0' \
   && apt-get remove -y build-essential postgresql-server-dev-$PG_MAJOR \
 	&& apt-get autoremove -y \

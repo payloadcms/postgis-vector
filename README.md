@@ -32,7 +32,6 @@ postgres=# \dx
 ------------------------+---------+------------+-------------------------------------------------------------------
  fuzzystrmatch          | 1.2     | public     | determine similarities and distance between strings
  pg_trgm                | 1.6     | public     | text similarity measurement and index searching based on trigrams
- pg_uuidv7              | 1.5     | public     | pg_uuidv7: create UUIDv7 values in postgres
  plpgsql                | 1.0     | pg_catalog | PL/pgSQL procedural language
  postgis                | 3.4.2   | public     | PostGIS geometry and geography spatial types and functions
  postgis_tiger_geocoder | 3.4.2   | tiger      | PostGIS tiger geocoder and reverse geocoder
