@@ -5,11 +5,11 @@ ARG PG_MAJOR
 LABEL org.opencontainers.image.title="postgis-vector" \
       org.opencontainers.image.description="postgresql+postgis container with pgvector added" \
       org.opencontainers.image.vendor="@gvkhna" \
-      org.opencontainers.image.authors="Gaurav Khanna <gaurav@gvkhna.com>" \
-      org.opencontainers.image.version="17-3.5" \
+      org.opencontainers.image.authors="Payload <dev@payloadcms.com>" \
+      org.opencontainers.image.version="17-3.4" \
       org.opencontainers.image.licenses="MIT" \
-      org.opencontainers.image.url="https://github.com/gvkhna/postgis-vector" \
-      org.opencontainers.image.source="https://github.com/gvkhna/postgis-vector"
+      org.opencontainers.image.url="https://github.com/payloadcms/postgis-vector" \
+      org.opencontainers.image.source="https://github.com/payloadcms/postgis-vector"
 
 RUN apt-get update \
   && apt-mark hold locales \
