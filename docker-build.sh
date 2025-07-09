@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build --platform=linux/amd64 -t pgtest .
+docker build -t pgtest .
