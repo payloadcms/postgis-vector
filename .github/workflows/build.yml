@@ -34,7 +34,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and Push Multi-Arch Image
+      - name: Lowercase repository name
+        id: repo_name
+        run: echo "REPO_NAME=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
+      - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -42,5 +46,5 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
-            ghcr.io/${{ github.repository }}:${{ steps.docker_meta.outputs.VERSION }}
-            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/${{ steps.repo_name.outputs.REPO_NAME }}:${{ steps.docker_meta.outputs.VERSION }}
+            ghcr.io/${{ steps.repo_name.outputs.REPO_NAME }}:latest
