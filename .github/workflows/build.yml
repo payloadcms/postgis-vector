@@ -24,6 +24,9 @@ jobs:
           VERSION_LABEL=$(grep 'org.opencontainers.image.version' ./Dockerfile | cut -d '"' -f 2)
           echo "VERSION=$VERSION_LABEL" >> $GITHUB_OUTPUT
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
