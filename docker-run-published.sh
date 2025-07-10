@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-# This script just runs the latest published image and does not build it locally.
-
-docker pull ghcr.io/payloadcms/postgis-vector:latest && docker run --rm \
+docker pull ghcr.io/payloadcms/postgis-vector:latest && \
+# Stop existing container if it exists
+docker rm -f postgis-vector || true && \
+# Run new container
+docker run --rm \
+  --name postgis-vector \
   -e POSTGRES_USER=devuser \
   -e POSTGRES_PASSWORD=devpassword \
   -e POSTGRES_DB=mydb \
