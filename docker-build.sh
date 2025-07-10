@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t pgtest .
+docker build -t pgvectortest .
