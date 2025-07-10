@@ -36,3 +36,6 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY ./initdb-extensions.sh /docker-entrypoint-initdb.d/20_extensions.sh
+
+# Ensure postgis extension does not automatically create tables to prevent "You're about to delete spatial_ref_sys table with 8500 items" drizzle schema prompts on first run
+RUN rm -f /docker-entrypoint-initdb.d/10_postgis.sh
