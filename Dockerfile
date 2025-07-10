@@ -4,6 +4,7 @@ ARG PG_VECTOR_VERSION=0.8.0
 FROM imresamu/postgis:$PG_MAJOR-3.5-bookworm
 ARG PG_MAJOR
 ARG PG_VECTOR_VERSION
+ARG TARGETARCH
 
 LABEL org.opencontainers.image.title="postgis-vector" \
       org.opencontainers.image.description="postgresql+postgis container with pgvector added" \
@@ -25,8 +26,15 @@ RUN apt-get update \
   pgxnclient \
   postgresql-server-dev-$PG_MAJOR \
   && git clone --branch v"${PG_VECTOR_VERSION}" https://github.com/pgvector/pgvector.git /tmp/pgvector \
+  # Portable fast flags for ARM (the default flags crash on Apple m1 macbooks if image built in GitHub CI); native for AMD64
   && cd /tmp/pgvector \
-  && make && make install \
+  && if [ "$TARGETARCH" = "arm64" ]; then \
+    echo "Building pgvector for ARM64 (portable)"; \
+    make OPTFLAGS="-O3 -march=armv8-a -mtune=generic" && make install; \
+  else \
+    echo "Building pgvector for AMD64 (native)"; \
+    make OPTFLAGS="-O3 -march=native" && make install; \
+  fi \
   && cd / \
   && rm -rf /tmp/pgvector \
   && apt-get remove -y build-essential clang-13 llvm-13 llvm-13-dev postgresql-server-dev-$PG_MAJOR \
